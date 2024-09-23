@@ -1,0 +1,165 @@
+/* Resetando margens e preenchimentos padrões */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Centralizar o body */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 2rem; /* Usando rem para melhor responsividade */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    flex-direction: column;
+    transition: background-color 0.5s ease;
+}
+
+/* Estilos para o header */
+header {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    width: 100%;
+    max-width: 1200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.5s ease;
+}
+
+/* Estilos para o menu de navegação */
+header nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #1abc9c;
+    transform: scale(1.1);
+}
+
+/* Estilo das seções */
+main {
+    width: 100%;
+    max-width: 1200px;
+}
+
+section {
+    margin: 2rem 0; /* Usando rem para melhor responsividade */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+/* Melhorando a animação */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 2em;
+    transition: color 0.3s ease;
+    text-align: center;
+}
+
+/* Estilos para a imagem do perfil */
+#sobre-mim img {
+    border-radius: 50%;
+    margin-bottom: 10px;
+    width: 200px;
+    height: auto;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#sobre-mim img:hover {
+    transform: scale(1.1) rotate(10deg); /* Efeito de zoom e rotação */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra ao redor da imagem */
+}
+
+/* Estilos para os links */
+a {
+    color: #3498db;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+    text-align: center;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+a:hover {
+    color: #2980b9;
+}
+
+/* Estilo para a lista de experiências acadêmicas */
+#experiencias ul, #experiencia-profissional ul {
+    padding-left: 0; /* Removendo o preenchimento padrão */
+    list-style-type: none; /* Removendo marcadores padrão */
+}
+
+#experiencias li, #experiencia-profissional li {
+    position: relative;
+    padding-left: 1.5rem; /* Espaçamento para o ícone */
+    margin-bottom: 10px;
+}
+
+#experiencias li::before, #experiencia-profissional li::before {
+    content: '°'; /* Ícone específico para a lista */
+    position: absolute;
+    left: 0;
+    color: #1abc9c; /* Cor do ícone */
+}
+
+/* Estilos para botões com animação */
+button {
+    background-color: #1abc9c;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover {
+    background-color: #16a085;
+    transform: scale(1.05);
+}
