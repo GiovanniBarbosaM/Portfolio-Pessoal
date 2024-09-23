@@ -12,7 +12,7 @@ body {
     color: #333;
     background-color: #f4f4f4;
     margin: 0;
-    padding: 2rem; /* Usando rem para melhor responsividade */
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,6 +39,7 @@ header nav ul {
     padding: 0;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* Permite que os itens se movam para a linha seguinte em telas menores */
 }
 
 header nav ul li {
@@ -60,16 +61,13 @@ header nav ul li a:hover {
 }
 
 /* Estilo das seções */
-main {
-    width: 100%;
-    max-width: 1200px;
-}
-
 section {
-    margin: 2rem 0; /* Usando rem para melhor responsividade */
+    margin: 20px 0;
     padding: 20px;
     background-color: #fff;
     border-radius: 8px;
+    width: 100%;
+    max-width: 1200px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     opacity: 0;
     transform: translateY(30px);
@@ -102,21 +100,20 @@ section h2 {
     margin-bottom: 10px;
     width: 200px;
     height: auto;
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    transition: transform 0.5s ease;
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
 
 #sobre-mim img:hover {
-    transform: scale(1.1) rotate(10deg); /* Efeito de zoom e rotação */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra ao redor da imagem */
+    transform: scale(1.1); /* Novo efeito de hover */
 }
 
 /* Estilos para os links */
 a {
     color: #3498db;
-    transition: color 0.3s ease, text-shadow 0.3s ease;
+    transition: color 0.3s ease;
     text-align: center;
     display: inline-block;
     margin-top: 10px;
@@ -126,23 +123,14 @@ a:hover {
     color: #2980b9;
 }
 
-/* Estilo para a lista de experiências acadêmicas */
-#experiencias ul, #experiencia-profissional ul {
-    padding-left: 0; /* Removendo o preenchimento padrão */
-    list-style-type: none; /* Removendo marcadores padrão */
+/* Estilo para a lista de experiências */
+ul {
+    padding-left: 20px;
+    list-style: circle;
 }
 
-#experiencias li, #experiencia-profissional li {
-    position: relative;
-    padding-left: 1.5rem; /* Espaçamento para o ícone */
+li {
     margin-bottom: 10px;
-}
-
-#experiencias li::before, #experiencia-profissional li::before {
-    content: '°'; /* Ícone específico para a lista */
-    position: absolute;
-    left: 0;
-    color: #1abc9c; /* Cor do ícone */
 }
 
 /* Estilos para botões com animação */
@@ -162,4 +150,27 @@ button {
 button:hover {
     background-color: #16a085;
     transform: scale(1.05);
+}
+
+/* Media Queries para dispositivos móveis */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    header nav ul {
+        flex-direction: column; /* Coloca os itens do menu em coluna */
+    }
+
+    section {
+        padding: 15px;
+    }
+
+    section h2 {
+        font-size: 1.5em; /* Reduz o tamanho do texto em telas menores */
+    }
+
+    #sobre-mim img {
+        width: 150px; /* Reduz o tamanho da imagem em telas menores */
+    }
 }
