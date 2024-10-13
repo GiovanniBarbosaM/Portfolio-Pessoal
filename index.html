@@ -49,6 +49,32 @@
             text-decoration: underline; /* Sublinhado ao passar o mouse */
         }
 
+        /* Barra de pesquisa */
+        .search-container {
+            margin: 15px 0; /* Adicionando espaço acima e abaixo da barra de pesquisa */
+        }
+
+        .search-container input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 300px;
+            margin-right: 10px;
+        }
+
+        .search-container button {
+            padding: 10px;
+            background-color: #4CAF50; /* Verde para o botão */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background-color: #45a049; /* Verde mais escuro ao passar o mouse */
+        }
+
         .content-section {
             display: none; /* Esconder todas as seções inicialmente */
             padding: 20px;
@@ -160,6 +186,16 @@
         .sub-tabs button:hover {
             background-color: #45a049; /* Verde mais escuro ao passar o mouse */
         }
+
+        /* Estilo para os detalhes de contato */
+        .contact-details {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .contact-details p {
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
@@ -176,6 +212,10 @@
                 <li><a onclick="showSection('contato')">Contato</a></li>
             </ul>
         </nav>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Buscar por palavras...">
+            <button onclick="search()">Pesquisar</button>
+        </div>
     </header>
 
     <section id="home" class="content-section active">
@@ -197,95 +237,75 @@
             <p>Gosto de ler, jogar diversos sistemas de RPG, acampar, criar histórias diversas para narrativas de jogos e agora além de um aprendizado também esta virando um momento para distrair criar os meus projetos que futuramente estarao aqui.</p>
         </div>
         <div id="interesses" class="sub-section">
-            <p>Interesso-me por desenvolvimento web, inteligência artificial e jogos.</p>
+            <p>Interesso-me por desenvolvimento web, machine learning e novas tecnologias que podem ser utilizadas para melhorar a experiência do usuário.</p>
         </div>
-    </section>
-
-    <section id="experiencias" class="content-section">
-        <h2>Minhas Experiências Acadêmicas</h2>
-        <ul>
-            <li>
-                <h3>Estudos em Tecnologia da Informação:</h3>
-                <p>Cursando o primeiro semestre em Análise e Desenvolvimento de Sistemas (Anhanguera)</p>
-                <p>Curso livre em Git/GitHub e Iniciação em HTML e CSS</p>
-            </li>
-            <li>
-                <h3>Aprendizado em Programação</h3>
-                <p>Estou desenvolvendo habilidades em Python e JavaScript.</p>
-            </li>
-            <li>
-                <h3>Cursos Extras:</h3>
-                <ul>
-                    <li>Curso de Desenvolvimento Web</li>
-                    <li>Curso de Algoritmos</li>
-                    <li>Curso de JavaScript</li>
-                    <li>Informática (Entec)</li>
-                    <li>Automação Comercial (Entec)</li>
-                    <li>Web Design (Entec)</li>
-                    <li>Gestão Ambiental (Tableau)</li>
-                    <li>Condução de Veículos de Transporte de Cargas de Produtos Perigosos (Sest/Senat)</li>
-                    <li>Condutor de Veículo de Transporte de Carga Indivisível (Sest/Senat)</li>
-                    <li>Condutor de Veículo de Transporte Coletivo (Sest/Senat)</li>
-                    <li>Condutor de Veículo de Emergência (Sest/Senat)</li>
-                    <li>Operador de Guindauto (Sest/Senat)</li>
-                    <li>Relacionamento Interpessoal e Atendimento ao Cliente (Sest/Senat)</li>
-                    <li>Responsável Técnico (Sest/Senat)</li>
-                    <li>5S em Escritório (Sest/Senat)</li>
-                    <li>Administração de Materiais (Sest/Senat)</li>
-                    <li>Administração de Frota (Sest/Senat)</li>
-                    <li>Básico de Coordenador de Tráfego (Sest/Senat)</li>
-                    <li>Gestão de Transporte e da Frota (Sest/Senat)</li>
-                    <li>Mecânico de Ciclo Diesel (Senai)</li>
-                </ul>
-            </li>
-        </ul>
     </section>
 
     <section id="habilidades" class="content-section">
         <h2>Habilidades</h2>
-        <p>Tenho habilidades em HTML, CSS, JavaScript, Python e Git/GitHub.</p>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>Flask</li>
+            <li>SQL</li>
+        </ul>
+    </section>
+
+    <section id="experiencias" class="content-section">
+        <h2>Minhas Experiências Acadêmicas</h2>
+        <p>Atualmente estou cursando Análise e Desenvolvimento de Sistemas na EDA. Aqui estão algumas das disciplinas que estou estudando:</p>
+        <ul>
+            <li>Análise e Modelagem de Sistemas</li>
+            <li>Linguagem de Programação</li>
+            <li>Projeto Integrado Inovação</li>
+        </ul>
     </section>
 
     <section id="projetos" class="content-section">
         <h2>Projetos</h2>
         <div class="project-links">
-            <div class="project-link">
-                <img src="flappy-bird.png" alt="Flappy Bird Clone">
-                <h3>Clone de Flappy Bird</h3>
-                <p>Um jogo simples baseado no popular Flappy Bird.</p>
+            <div class="project-link" onclick="window.open('link_do_projeto_1.html')">
+                <img src="flappy_bird.png" alt="Clone do Flappy Bird">
+                <p>Clone do Flappy Bird</p>
             </div>
-            <div class="project-link">
-                <img src="estoque.png" alt="Sistema de Gerenciamento de Estoque">
-                <h3>Sistema de Gerenciamento de Estoque</h3>
-                <p>Um sistema em Python para gerenciar estoque de produtos.</p>
+            <div class="project-link" onclick="window.open('link_do_projeto_2.html')">
+                <img src="estoque.png" alt="Sistema de Estoque">
+                <p>Sistema de Estoque</p>
             </div>
-            <!-- Adicione mais projetos aqui -->
+            <div class="project-link" onclick="window.open('link_do_projeto_3.html')">
+                <img src="projeto_3.png" alt="Projeto 3">
+                <p>Projeto 3</p>
+            </div>
         </div>
     </section>
 
     <section id="curiosidades" class="content-section">
         <h2>Curiosidades</h2>
-        <p>Sou fã de jogos de RPG e adoro explorar novos mundos virtuais.</p>
+        <p>Adoro aprender novas tecnologias e estou sempre em busca de novos desafios. Um dos meus sonhos é desenvolver um jogo completo e publicar na web.</p>
     </section>
 
     <section id="contato" class="content-section">
         <h2>Contato</h2>
-        <form action="mailto:giovanni@example.com" method="post" enctype="text/plain">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
-
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-
+        <form>
+            <label for="name">Nome:</label>
+            <input type="text" id="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <label for="message">Mensagem:</label>
+            <textarea id="message" rows="4" required></textarea>
             <button type="submit">Enviar Mensagem</button>
         </form>
+        <div class="contact-details">
+            <p>Você pode me encontrar nas redes sociais:</p>
+            <p><a href="https://github.com/seu_github" target="_blank">GitHub</a></p>
+            <p><a href="https://www.linkedin.com/in/seu_linkedin/" target="_blank">LinkedIn</a></p>
+        </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Giovanni Barbosa Machado. Todos os direitos reservados.</p>
+        <p>© 2024 Giovanni Barbosa Machado. Todos os direitos reservados.</p>
     </footer>
 
     <script>
@@ -303,6 +323,15 @@
                 subSection.classList.remove('active');
             });
             document.getElementById(subSectionId).classList.add('active');
+        }
+
+        function search() {
+            const query = document.getElementById('search').value.toLowerCase();
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                const sectionText = section.textContent.toLowerCase();
+                section.style.display = sectionText.includes(query) ? 'block' : 'none';
+            });
         }
     </script>
 </body>
