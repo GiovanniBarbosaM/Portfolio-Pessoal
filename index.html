@@ -6,26 +6,38 @@
     <title>Portfólio de Giovanni</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh; /* Altura da tela */
+            background-image: url("Imagens/dragon.jpeg"); /* Caminho da sua imagem */
+            background-size: cover; /* Cobre toda a área */
+            background-position: center; /* Centraliza a imagem */
+        }
+
         /* Estilos Gerais */
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0; /* Cor de fundo clara */
-            color: #333; /* Cor do texto mais escura para melhor contraste */
+            background-color: #f0f0f0;
+            color: #fff;
         }
 
         header {
-            background-color: rgba(255, 255, 255, 0.9); /* Fundo branco semitransparente */
-            padding: 20px 0;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         header h1 {
             margin: 0;
             font-size: 2.5em;
-            color: #4CAF50; /* Cor do título em verde */
+        }
+
+        nav {
+            text-align: center;
+            margin-bottom: 20px;
         }
 
         nav ul {
@@ -34,278 +46,148 @@
         }
 
         nav ul li {
-            display: inline;
-            margin: 0 15px;
+            display: inline-block;
+            margin: 0 10px;
         }
 
-        nav ul li a {
-            color: #4CAF50; /* Cor dos links em verde */
+        nav a {
+            background-color: #000;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 4px;
             text-decoration: none;
-            font-weight: bold;
-            cursor: pointer;
+            transition: background-color 0.3s;
         }
 
-        nav ul li a:hover {
-            text-decoration: underline; /* Sublinhado ao passar o mouse */
+        nav a:hover {
+            background-color: #333;
         }
 
-        /* Barra de pesquisa */
         .search-container {
-            margin: 15px 0; /* Adicionando espaço acima e abaixo da barra de pesquisa */
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
         }
 
         .search-container input {
             padding: 10px;
             border: 1px solid #ccc;
-            border-radius: 5px;
-            width: 300px;
+            border-radius: 4px;
             margin-right: 10px;
         }
 
         .search-container button {
-            padding: 10px;
-            background-color: #4CAF50; /* Verde para o botão */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .search-container button:hover {
-            background-color: #45a049; /* Verde mais escuro ao passar o mouse */
-        }
-
-        .content-section {
-            display: none; /* Esconder todas as seções inicialmente */
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semitransparente para seções */
-            border-radius: 8px;
-            margin: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
-        }
-
-        .content-section.active {
-            display: block; /* Mostrar apenas a seção ativa */
-        }
-
-        /* Estilos para Projetos */
-        .project-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .project-link {
-            width: 200px;
-            cursor: pointer;
-            text-align: center;
-            transition: transform 0.3s ease;
-            border: 1px solid #ccc; /* Borda clara para as seções de projeto */
-            border-radius: 10px;
-            background-color: #fff; /* Fundo branco para projetos */
-        }
-
-        .project-link img {
-            width: 100%;
-            border-radius: 10px 10px 0 0; /* Bordas arredondadas apenas na parte superior */
-        }
-
-        .project-link:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ao passar o mouse */
-        }
-
-        /* Estilo para o formulário */
-        form {
-            display: flex;
-            flex-direction: column;
-            max-width: 400px;
-            margin: 20px auto;
-            background-color: rgba(255, 255, 255, 0.9); /* Fundo branco para o formulário */
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para destaque */
-        }
-
-        form label {
-            margin-top: 10px;
-        }
-
-        form input, form textarea {
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        form button {
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #4CAF50; /* Verde para o botão */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        form button:hover {
-            background-color: #45a049; /* Verde mais escuro ao passar o mouse */
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            background-color: #4CAF50; /* Fundo verde para o rodapé */
-            color: white; /* Texto branco no rodapé */
-            padding: 10px 0;
-        }
-
-        /* Responsividade */
-        @media (max-width: 600px) {
-            .project-links {
-                flex-direction: column;
-                align-items: center;
-            }
-        }
-
-        /* Estilo para as sub-abas */
-        .sub-tabs {
-            margin: 10px 0;
-        }
-
-        .sub-tabs button {
-            background-color: #4CAF50; /* Cor do botão */
+            background-color: #000;
             color: white;
             border: none;
             padding: 10px 15px;
             cursor: pointer;
-            margin-right: 5px;
+            border-radius: 4px;
+        }
+
+        .content-section {
+            display: none;
+            padding: 20px;
+            background-color: transparent;
+            border-radius: 5px;
+            margin: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        h2 {
+            border-bottom: 2px solid #7e0707;
+            padding-bottom: 10px;
+        }
+
+        .project-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .project-link {
+            margin: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .project-link img {
+            width: 100%; /* Adapta a imagem à largura do container */
+            max-width: 150px; /* Tamanho máximo */
+            height: auto;
             border-radius: 5px;
         }
 
-        .sub-tabs button:hover {
-            background-color: #45a049; /* Verde mais escuro ao passar o mouse */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 20px;
         }
 
-        /* Estilo para os detalhes de contato */
         .contact-details {
             margin-top: 20px;
-            text-align: center;
         }
 
-        .contact-details p {
-            margin: 5px 0;
+        /* Ajustes para telas pequenas */
+        @media (max-width: 768px) {
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            .search-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .search-container input {
+                margin-bottom: 10px;
+            }
+
+            .project-link img {
+                max-width: 100px; /* Reduz o tamanho das imagens em telas menores */
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Giovanni Barbosa Machado</h1>
-        <nav>
-            <ul>
-                <li><a onclick="showSection('home')">Início</a></li>
-                <li><a onclick="showSection('sobre')">Sobre Mim</a></li>
-                <li><a onclick="showSection('habilidades')">Habilidades</a></li>
-                <li><a onclick="showSection('experiencias')">Minhas Experiências Acadêmicas</a></li>
-                <li><a onclick="showSection('projetos')">Projetos</a></li>
-                <li><a onclick="showSection('curiosidades')">Curiosidades</a></li>
-                <li><a onclick="showSection('contato')">Contato</a></li>
-            </ul>
-        </nav>
-        <div class="search-container">
-            <input type="text" id="search" placeholder="Buscar por palavras...">
-            <button onclick="search()">Pesquisar</button>
-        </div>
     </header>
+    <nav>
+        <ul>
+            <li><a onclick="showSection('home')">Início</a></li>
+            <li><a onclick="showSection('sobre')">Sobre Mim</a></li>
+            <li><a onclick="showSection('habilidades')">Habilidades</a></li>
+            <li><a onclick="showSection('experiencias')">Experiências</a></li>
+            <li><a onclick="showSection('projetos')">Projetos</a></li>
+            <li><a onclick="showSection('curiosidades')">Curiosidades</a></li>
+            <li><a onclick="showSection('contato')">Contato</a></li>
+        </ul>
+    </nav>
+    
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Buscar por palavras...">
+        <button onclick="search()">Pesquisar</button>
+    </div>
 
     <section id="home" class="content-section active">
-        <h2>Bem-vindo ao meu portfólio</h2>
+        <h2>Bem-vindo ao meu portfólio!&#x1F596;</h2>
         <p>Aqui você encontrará alguns dos meus projetos mais recentes.</p>
     </section>
 
-    <section id="sobre" class="content-section">
-        <h2>Sobre Mim</h2>
-        <div class="sub-tabs">
-            <button onclick="showSubSection('quemSou')">Quem Sou Eu</button>
-            <button onclick="showSubSection('hobbie')">Hobbie</button>
-            <button onclick="showSubSection('interesses')">Interesses</button>
-        </div>
-        <div id="quemSou" class="sub-section active">
-            <p>Desenvolvedor em formação, focado em JavaScript e suas diversas aplicações no desenvolvimento web e em projetos de software. Estou sempre em busca de aprender novas tecnologias e aprimorar minhas habilidades. Trabalho há 14 anos na área de transporte. Porém através de contatos com pessoas da área de programação, decidi retornar para a área depois do meu primeiro contato em 2003, quando fiz o primeiro curso em HTML e Java</p>
-        </div>
-        <div id="hobbie" class="sub-section">
-            <p>Gosto de ler, jogar diversos sistemas de RPG, acampar, criar histórias diversas para narrativas de jogos e agora além de um aprendizado também esta virando um momento para distrair criar os meus projetos que futuramente estarao aqui.</p>
-        </div>
-        <div id="interesses" class="sub-section">
-            <p>Interesso-me por desenvolvimento web, machine learning e novas tecnologias que podem ser utilizadas para melhorar a experiência do usuário.</p>
-        </div>
-    </section>
-
-    <section id="habilidades" class="content-section">
-        <h2>Habilidades</h2>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>Flask</li>
-            <li>SQL</li>
-        </ul>
-    </section>
-
-    <section id="experiencias" class="content-section">
-        <h2>Minhas Experiências Acadêmicas</h2>
-        <p>Atualmente estou cursando Análise e Desenvolvimento de Sistemas na EDA. Aqui estão algumas das disciplinas que estou estudando:</p>
-        <ul>
-            <li>Análise e Modelagem de Sistemas</li>
-            <li>Linguagem de Programação</li>
-            <li>Projeto Integrado Inovação</li>
-        </ul>
-    </section>
-
-    <section id="projetos" class="content-section">
-        <h2>Projetos</h2>
-        <div class="project-links">
-            <div class="project-link" onclick="window.open('link_do_projeto_1.html')">
-                <img src="flappy_bird.png" alt="Clone do Flappy Bird">
-                <p>Clone do Flappy Bird</p>
-            </div>
-            <div class="project-link" onclick="window.open('link_do_projeto_2.html')">
-                <img src="estoque.png" alt="Sistema de Estoque">
-                <p>Sistema de Estoque</p>
-            </div>
-            <div class="project-link" onclick="window.open('link_do_projeto_3.html')">
-                <img src="projeto_3.png" alt="Projeto 3">
-                <p>Projeto 3</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="curiosidades" class="content-section">
-        <h2>Curiosidades</h2>
-        <p>Adoro aprender novas tecnologias e estou sempre em busca de novos desafios. Um dos meus sonhos é desenvolver um jogo completo e publicar na web.</p>
-    </section>
-
-    <section id="contato" class="content-section">
-        <h2>Contato</h2>
-        <form>
-            <label for="name">Nome:</label>
-            <input type="text" id="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" required>
-            <label for="message">Mensagem:</label>
-            <textarea id="message" rows="4" required></textarea>
-            <button type="submit">Enviar Mensagem</button>
-        </form>
-        <div class="contact-details">
-            <p>Você pode me encontrar nas redes sociais:</p>
-            <p><a href="https://github.com/seu_github" target="_blank">GitHub</a></p>
-            <p><a href="https://www.linkedin.com/in/seu_linkedin/" target="_blank">LinkedIn</a></p>
-        </div>
-    </section>
+    <!-- Outras seções do seu conteúdo -->
 
     <footer>
-        <p>© 2024 Giovanni Barbosa Machado. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Giovanni Barbosa Machado. Todos os direitos reservados.</p>
     </footer>
 
     <script>
@@ -317,20 +199,16 @@
             document.getElementById(sectionId).classList.add('active');
         }
 
-        function showSubSection(subSectionId) {
-            const subSections = document.querySelectorAll('.sub-section');
-            subSections.forEach(subSection => {
-                subSection.classList.remove('active');
-            });
-            document.getElementById(subSectionId).classList.add('active');
-        }
-
         function search() {
-            const query = document.getElementById('search').value.toLowerCase();
+            const searchTerm = document.getElementById('search').value.toLowerCase();
             const sections = document.querySelectorAll('.content-section');
             sections.forEach(section => {
-                const sectionText = section.textContent.toLowerCase();
-                section.style.display = sectionText.includes(query) ? 'block' : 'none';
+                const text = section.innerText.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    section.style.display = "block";
+                } else {
+                    section.style.display = "none";
+                }
             });
         }
     </script>
