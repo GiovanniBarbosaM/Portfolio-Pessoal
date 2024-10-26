@@ -6,210 +6,224 @@
     <title>Portfólio de Giovanni</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            min-height: 100vh; /* Altura da tela */
-            background-image: url("Imagens/dragon.jpeg"); /* Caminho da sua imagem */
-            background-size: cover; /* Cobre toda a área */
-            background-position: center; /* Centraliza a imagem */
-        }
-
         /* Estilos Gerais */
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f0f0f0;
-            color: #fff;
+            background: url("Imagens/dragon.jpeg") center/cover no-repeat;
+            color: #ffffff;
         }
 
         header {
+            background-color: rgba(255, 255, 255, 0);
+            padding: 20px 0;
             text-align: center;
-            padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        nav {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
+        header h1 { font-size: 2.5em; }
+        
         nav ul {
-            list-style-type: none;
+            list-style: none;
             padding: 0;
-        }
-
-        nav ul li {
-            display: inline-block;
-            margin: 0 10px;
-        }
-
-        nav a {
-            background-color: #000;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 4px;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-
-        nav a:hover {
-            background-color: #333;
-        }
-
-        .search-container {
             display: flex;
             justify-content: center;
-            margin: 20px 0;
+            gap: 15px;
         }
 
-        .search-container input {
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover { color: #ff0000; }
+
+        .search-container {
+            margin: 15px 0;
+        }
+
+        .search-container input, .search-container button {
             padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            border: none;
+            border-radius: 5px;
             margin-right: 10px;
+            color: #333;
         }
 
         .search-container button {
-            background-color: #000;
-            color: white;
-            border: none;
-            padding: 10px 15px;
+            background-color: #ff0000;
+            color: #fff;
             cursor: pointer;
-            border-radius: 4px;
+            transition: background-color 0.3s;
         }
+
+        .search-container button:hover { background-color: #45a049; }
 
         .content-section {
             display: none;
-            padding: 20px;
-            background-color: transparent;
-            border-radius: 5px;
-            margin: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 40px 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-align: center;
         }
 
-        .content-section.active {
-            display: block;
-        }
-
-        h2 {
-            border-bottom: 2px solid #7e0707;
-            padding-bottom: 10px;
-        }
+        .content-section.active { display: block; }
 
         .project-links {
             display: flex;
             justify-content: center;
+            gap: 30px;
             flex-wrap: wrap;
         }
 
         .project-link {
-            margin: 10px;
-            text-align: center;
+            width: 200px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            overflow: hidden;
             cursor: pointer;
+            transition: transform 0.3s;
         }
 
         .project-link img {
-            width: 100%; /* Adapta a imagem à largura do container */
-            max-width: 150px; /* Tamanho máximo */
-            height: auto;
-            border-radius: 5px;
+            width: 100%;
+            border-radius: 10px 10px 0 0;
         }
+
+        .project-link:hover { transform: scale(1.05); }
 
         footer {
             text-align: center;
             padding: 20px;
-            margin-top: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
         }
 
-        .contact-details {
-            margin-top: 20px;
-        }
-
-        /* Ajustes para telas pequenas */
-        @media (max-width: 768px) {
-            nav ul li {
-                display: block;
-                margin: 10px 0;
-            }
-
-            header h1 {
-                font-size: 2em;
-            }
-
-            .search-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .search-container input {
-                margin-bottom: 10px;
-            }
-
-            .project-link img {
-                max-width: 100px; /* Reduz o tamanho das imagens em telas menores */
-            }
+        .profile-image {
+            width: 250px;
+            height: 350px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgb(0, 0, 0);
+            object-fit: cover;
         }
     </style>
 </head>
 <body>
     <header>
         <h1>Giovanni Barbosa Machado</h1>
+        <nav>
+            <ul>
+                <li><a onclick="showSection('home')">Início</a></li>
+                <li><a onclick="showSection('sobre')">Sobre Mim</a></li>
+                <li><a onclick="showSection('fotos')">Fotos</a></li>
+                <li><a onclick="showSection('habilidades')">Habilidades</a></li>
+                <li><a onclick="showSection('experiencias')">Experiências</a></li>
+                <li><a onclick="showSection('projetos')">Projetos</a></li>
+                <li><a onclick="showSection('contato')">Contato</a></li>
+            </ul>
+        </nav>
+        <div class="search-container">
+            <input type="text" id="search" placeholder="Buscar...">
+            <button onclick="search()">Pesquisar</button>
+        </div>
     </header>
-    <nav>
-        <ul>
-            <li><a onclick="showSection('home')">Início</a></li>
-            <li><a onclick="showSection('sobre')">Sobre Mim</a></li>
-            <li><a onclick="showSection('habilidades')">Habilidades</a></li>
-            <li><a onclick="showSection('experiencias')">Experiências</a></li>
-            <li><a onclick="showSection('projetos')">Projetos</a></li>
-            <li><a onclick="showSection('curiosidades')">Curiosidades</a></li>
-            <li><a onclick="showSection('contato')">Contato</a></li>
-        </ul>
-    </nav>
-    
-    <div class="search-container">
-        <input type="text" id="search" placeholder="Buscar por palavras...">
-        <button onclick="search()">Pesquisar</button>
-    </div>
 
     <section id="home" class="content-section active">
-        <h2>Bem-vindo ao meu portfólio!&#x1F596;</h2>
-        <p>Aqui você encontrará alguns dos meus projetos mais recentes.</p>
+        <img src="Imagens/perfil.jpg" alt="Foto de perfil" class="profile-image">
+        <h2>Bem-vindo ao meu portfólio! &#x1F596;</h2>
+        <p>Aqui você encontrará alguns dos meus projetos mais recentes e um pouco da minha história.</p>
+    </section>
+    
+    <section id="sobre" class="content-section">
+        <h2>Sobre Mim</h2>
+        <p>Sou um desenvolvedor em formação, atualmente cursando Análise e Desenvolvimento de Sistemas. Estou empenhado em aprimorar minhas habilidades em desenvolvimento fullstack, com conhecimento em Python e Flask, além de uma introdução ao Node.js. Atualmente, estou realizando cursos de HTML, CSS e JavaScript para fortalecer minha base de conhecimentos.</p>
+
+        <p>No meu portfólio, destaco projetos que refletem meu aprendizado e dedicação, incluindo:</p>
+        
+        <ul>
+        <li><p>Sistema de Gerenciamento de Estoque: Uma aplicação desenvolvida com Python e Flask, focada no controle e gerenciamento de produtos, que integra funcionalidades de cadastro, consulta e movimentação de estoque.</p></li>
+        <li><p>Sistema para Salão de Beleza: Em desenvolvimento, este projeto busca criar uma plataforma abrangente para gerenciamento de clientes, serviços, agendamentos e transações financeiras, priorizando uma experiência de usuário intuitiva.</p></li>
+        <li><p>Análise de Dados de Vendas: Um projeto que utiliza bibliotecas como Pandas e Matplotlib para manipular e visualizar dados, permitindo insights valiosos sobre o desempenho de vendas em uma empresa de varejo.</p></li>
+        <p>Minha experiência no GitHub é focada em meus projetos pessoais, onde estou documentando meu aprendizado e desenvolvimento. Embora ainda não tenha colaborado em projetos de código aberto, estou disposto a ajudar e contribuir sempre que surgir a oportunidade.</p>
+    </ul>
+        
+        Estou entusiasmado para compartilhar meu portfólio, que representa não apenas minhas habilidades em desenvolvimento, mas também meu comprometimento em aprender e crescer na área de tecnologia. Estou aberto a oportunidades de colaboração e discussões sobre tecnologia e inovação. Sinta-se à vontade para me contatar!</p>
     </section>
 
-    <!-- Outras seções do seu conteúdo -->
+    <section id="fotos" class="content-section">
+        <h2>Minha vida em imagens</h2>
+        <img src="Imagens/giovanni-scout.JPG" alt="Escoteiro">
+        <img src="Imagens/giovanni-fogo.jpg" alt="Acampamento">
+        <img src="Imagens/giovanni.JPG" alt="Foto Giovanni">
+        <img src="Imagens/giovanni-eco.jpg" alt="EcoEvento">
+        <img src="Imagens/giovanni-ana.jpg" alt="Giovanni e Ana">
+        <img src="Imagens/giovanni-familia.jpg" alt="Família">
+    </section>
+
+    <section id="habilidades" class="content-section">
+        <h2>Habilidades</h2>
+        <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>Flask</li>
+            <li>Node.js</li>
+            <li>SQL</li>
+        </ul>
+    </section>
+
+    <section id="experiencias" class="content-section">
+        <h2>Experiências Acadêmicas</h2>
+        <p>Atualmente cursando Análise e Desenvolvimento de Sistemas na Anhanguera.</p>
+    </section>
+
+    <section id="projetos" class="content-section">
+        <h2>Projetos</h2>
+        <div class="project-links">
+            <div class="project-link" onclick="window.open('link_do_projeto_1.html')">
+                <img src="flappy_bird.png" alt="Clone do Flappy Bird">
+                <p>Clone do Flappy Bird</p>
+            </div>
+            <div class="project-link" onclick="window.open('link_do_projeto_2.html')">
+                <img src="estoque.png" alt="Sistema de Estoque">
+                <p>Sistema de Estoque</p>
+            </div>
+            <div class="project-link" onclick="window.open('link_do_projeto_3.html')">
+                <img src="link_do_projeto_3.png" alt="Outro Projeto">
+                <p>Outro Projeto</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="content-section">
+        <h2>Contato</h2>
+        <form>
+            <input type="text" placeholder="Seu Nome" required>
+            <input type="email" placeholder="Seu Email" required>
+            <textarea placeholder="Sua Mensagem" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
 
     <footer>
-        <p>&copy; 2024 Giovanni Barbosa Machado. Todos os direitos reservados.</p>
+        <p>© 2024 Giovanni Barbosa Machado</p>
     </footer>
 
     <script>
         function showSection(sectionId) {
-            const sections = document.querySelectorAll('.content-section');
-            sections.forEach(section => {
-                section.classList.remove('active');
-            });
+            document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
             document.getElementById(sectionId).classList.add('active');
         }
 
         function search() {
-            const searchTerm = document.getElementById('search').value.toLowerCase();
-            const sections = document.querySelectorAll('.content-section');
-            sections.forEach(section => {
-                const text = section.innerText.toLowerCase();
-                if (text.includes(searchTerm)) {
-                    section.style.display = "block";
-                } else {
-                    section.style.display = "none";
-                }
-            });
+            const query = document.getElementById('search').value.toLowerCase();
+            alert('Você pesquisou por: ' + query);
         }
     </script>
 </body>
