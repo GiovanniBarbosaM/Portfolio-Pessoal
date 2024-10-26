@@ -42,6 +42,8 @@
 
         .search-container {
             margin: 15px 0;
+            display: flex;
+            justify-content: center;
         }
 
         .search-container input, .search-container button {
@@ -50,6 +52,10 @@
             border-radius: 5px;
             margin-right: 10px;
             color: #333;
+        }
+
+        .search-container input {
+            width: 200px;
         }
 
         .search-container button {
@@ -66,7 +72,7 @@
             padding: 40px 20px;
             max-width: 800px;
             margin: 20px auto;
-            background-color: rgba(255, 255, 255, 0.1);
+            background-color: rgba(245, 58, 58, 0.548);
             border-radius: 10px;
             text-align: center;
         }
@@ -76,15 +82,16 @@
         .project-links {
             display: flex;
             justify-content: center;
-            gap: 30px;
+            gap: 20px;
             flex-wrap: wrap;
         }
 
         .project-link {
-            width: 200px;
+            width: 100%;
+            max-width: 200px;
             border: 1px solid #ccc;
             border-radius: 10px;
-            background-color: #fff;
+            background-color: #ffffff3d;
             overflow: hidden;
             cursor: pointer;
             transition: transform 0.3s;
@@ -111,6 +118,32 @@
             box-shadow: 0 4px 8px rgb(0, 0, 0);
             object-fit: cover;
         }
+
+        /* Estilo do Formulário de Contato */
+        #contato form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        #contato form input,
+        #contato form textarea,
+        #contato form button {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+        }
+
+        #contato form button {
+            background-color: #ff0000;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
     </style>
 </head>
 <body>
@@ -133,15 +166,22 @@
         </div>
     </header>
 
-    <section id="home" class="content-section active">
-        <img src="Imagens/perfil.jpg" alt="Foto de perfil" class="profile-image">
-        <h2>Bem-vindo ao meu portfólio! &#x1F596;</h2>
-        <p>Aqui você encontrará alguns dos meus projetos mais recentes e um pouco da minha história.</p>
-    </section>
-    
-    <section id="sobre" class="content-section">
-        <h2>Sobre Mim</h2>
-        <p>Sou um desenvolvedor em formação, atualmente cursando Análise e Desenvolvimento de Sistemas. Estou empenhado em aprimorar minhas habilidades em desenvolvimento fullstack, com conhecimento em Python e Flask, além de uma introdução ao Node.js. Atualmente, estou realizando cursos de HTML, CSS e JavaScript para fortalecer minha base de conhecimentos.</p>
+    <main>
+        <section id="home" class="content-section active">
+            <img src="Imagens/perfil.jpg" alt="Foto de perfil" class="profile-image">
+            <h2>Bem-vindo ao meu portfólio! &#x1F596;</h2>
+            <p>Aqui você encontrará alguns dos meus projetos mais recentes e um pouco da minha história.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/giovanni-barbosa-b3977632b/" target="_blank">LinkedIn</a><br>
+                <a href="https://www.instagram.com/giovannibarbosa.m/?hl=pt-br" target="_blank">Instagram</a><br>
+                <a href="https://github.com/GiovanniBarbosaM" target="_blank">GitHub</a><br>
+                <a href="https://wa.me/5512997722162" target="_blank">WhatsApp</a>
+            </div>
+        </section>
+
+        <section id="sobre" class="content-section">
+            <h2>Sobre Mim</h2>
+            <p>Sou um desenvolvedor em formação, atualmente cursando Análise e Desenvolvimento de Sistemas. Estou empenhado em aprimorar minhas habilidades em desenvolvimento fullstack, com conhecimento em Python e Flask, além de uma introdução ao Node.js. Atualmente, estou realizando cursos de HTML, CSS e JavaScript para fortalecer minha base de conhecimentos.</p>
 
         <p>No meu portfólio, destaco projetos que refletem meu aprendizado e dedicação, incluindo:</p>
         
@@ -153,63 +193,106 @@
     </ul>
         
         Estou entusiasmado para compartilhar meu portfólio, que representa não apenas minhas habilidades em desenvolvimento, mas também meu comprometimento em aprender e crescer na área de tecnologia. Estou aberto a oportunidades de colaboração e discussões sobre tecnologia e inovação. Sinta-se à vontade para me contatar!</p>
-    </section>
+        </section>
 
-    <section id="fotos" class="content-section">
-        <h2>Minha vida em imagens</h2>
-        <img src="Imagens/giovanni-scout.JPG" alt="Escoteiro">
-        <img src="Imagens/giovanni-fogo.jpg" alt="Acampamento">
-        <img src="Imagens/giovanni.JPG" alt="Foto Giovanni">
-        <img src="Imagens/giovanni-eco.jpg" alt="EcoEvento">
-        <img src="Imagens/giovanni-ana.jpg" alt="Giovanni e Ana">
-        <img src="Imagens/giovanni-familia.jpg" alt="Família">
-    </section>
+        <section id="fotos" class="content-section">
+            <h2>Minha vida em imagens</h2>
+            <img src="Imagens/giovanni-scout.JPG" alt="Escoteiro">
+            <img src="Imagens/giovanni-fogo.jpg" alt="Acampamento">
+            <img src="Imagens/giovanni.JPG" alt="Foto Giovanni">
+            <img src="Imagens/giovanni-eco.jpg" alt="EcoEvento">
+            <img src="Imagens/giovanni-ana.jpg" alt="Giovanni e Ana">
+            <img src="Imagens/giovanni-familia.jpg" alt="Família">
+        </section>
 
-    <section id="habilidades" class="content-section">
-        <h2>Habilidades</h2>
-        <ul>
-            <li>HTML</li>
-            <li>CSS</li>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>Flask</li>
-            <li>Node.js</li>
-            <li>SQL</li>
-        </ul>
-    </section>
+        <section id="habilidades" class="content-section">
+            <h2>Habilidades</h2>
+            <ul>
+                HTML
+                <br>CSS
+                <br>JavaScript
+                <br>Python
+                <br>Flask
+                <br>Node.js
+                <br>SQL
+            </ul>
+        </section>
 
-    <section id="experiencias" class="content-section">
-        <h2>Experiências Acadêmicas</h2>
-        <p>Atualmente cursando Análise e Desenvolvimento de Sistemas na Anhanguera.</p>
-    </section>
+        <section id="experiencias" class="content-section">
+            <h2>Experiências Acadêmicas</h2>
+                
+                    
+                        <h3>Estudos em Tecnologia da Informação:</h3>
+                        <p>Cursando o primeiro semestre em Análise e Desenvolvimento de Sistemas (Anhanguera)</p>
+                        <p>Curso livre em Git/GitHub,  HTML/CSS e Javascript (Curso em Video</p>
+                    
+                        <h3>Aprendizado em Programação</h3>
+                        <p>Estou desenvolvendo habilidades em Python e JavaScript...</p>
+                   
+                        <h3>Cursos Extras:</h3>
+                        
+                            <li>Informática (Entec)</li>
+                            <li>Automação Comercial (Entec)</li>
+                            <li>Web Design (Entec)</li>
+                            <li>Gestão Ambiental (Tableau)</li>
+                            <li>Condução de Veículos de Transporte de Cargas de Produtos Perigosos (Sest/Senat)</li>
+                            <li>Condutor de Veículo de Transporte de Carga Indivisível (Sest/Senat)</li>
+                            <li>Condutor de Veículo de Transporte Coletivo (Sest/Senat)</li>
+                            <li>Condutor de Veículo de Emergência (Sest/Senat)</li>
+                            <li>Operador de Guindauto (Sest/Senat)</li>
+                            <li>Relacionamento Interpessoal e Atendimento ao Cliente (Sest/Senat)</li>
+                            <li>Responsável Técnico (Sest/Senat)</li>
+                            <li>5S em Escritório (Sest/Senat)</li>
+                            <li>Administração de Materiais (Sest/Senat)</li>
+                            <li>Administração de Frota (Sest/Senat)</li>
+                            <li>Básico de Coordenador de Tráfego (Sest/Senat)</li>
+                            <li>Gestão de Transporte e da Frota (Sest/Senat)</li>
+                            <li>Mecânico de Ciclo Diesel (Senai)</li>
+                        
+                  
+               
+        
+            <section id="experiencia-profissional">
+                <h2>Minhas Experiências Profissionais</h2>
+                           
+                    <p><h2>Aviação do Exército (2009-2017):</h2> Auxiliar de pista, Auxiliar de mecânico de aeronaves, Ferramenteiro, Motorista "D", Líder de pelotão.</p>
+                    <p><h2>TcTau (2017-2018):</h2> Motorista/Cobrador.</p>
+                    <p><h2>EcoTaubaté Ambiental S/A (2018-Atual):</h2> Motorista "D", Operador de Poliguindaste e guindalto.</p>              
+                
+            </section>
 
-    <section id="projetos" class="content-section">
-        <h2>Projetos</h2>
-        <div class="project-links">
-            <div class="project-link" onclick="window.open('link_do_projeto_1.html')">
-                <img src="flappy_bird.png" alt="Clone do Flappy Bird">
-                <p>Clone do Flappy Bird</p>
+
+
+        </section>
+
+        <section id="projetos" class="content-section">
+            <h2>Projetos</h2>
+            <div class="project-links">
+                <div class="project-link" onclick="window.open('link_do_projeto_1.html')">
+                    <img src="flappy_bird.png" alt="Clone do Flappy Bird">
+                    <p>Clone do Flappy Bird</p>
+                </div>
+                <div class="project-link" onclick="window.open('link_do_projeto_2.html')">
+                    <img src="estoque.png" alt="Sistema de Estoque">
+                    <p>Sistema de Estoque</p>
+                </div>
+                <div class="project-link" onclick="window.open('link_do_projeto_3.html')">
+                    <img src="link_do_projeto_3.png" alt="Outro Projeto">
+                    <p>Outro Projeto</p>
+                </div>
             </div>
-            <div class="project-link" onclick="window.open('link_do_projeto_2.html')">
-                <img src="estoque.png" alt="Sistema de Estoque">
-                <p>Sistema de Estoque</p>
-            </div>
-            <div class="project-link" onclick="window.open('link_do_projeto_3.html')">
-                <img src="link_do_projeto_3.png" alt="Outro Projeto">
-                <p>Outro Projeto</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contato" class="content-section">
-        <h2>Contato</h2>
-        <form>
-            <input type="text" placeholder="Seu Nome" required>
-            <input type="email" placeholder="Seu Email" required>
-            <textarea placeholder="Sua Mensagem" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
+        <section id="contato" class="content-section">
+            <h2>Contato</h2>
+            <form>
+                <input type="text" placeholder="Seu Nome" required>
+                <input type="email" placeholder="Seu Email" required>
+                <textarea placeholder="Sua Mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </main>
 
     <footer>
         <p>© 2024 Giovanni Barbosa Machado</p>
